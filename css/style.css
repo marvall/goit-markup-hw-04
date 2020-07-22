@@ -1,0 +1,430 @@
+/* -------------  HEADER STYLE --------*/
+:root {
+  --logo-font: "Raleway", sans-serif;
+  --main-font: "Roboto", sans-serif;
+  --main-action-color: #2196f3;
+  --main-text-color: #757575;
+  --main-title-color: #212121;
+  --secendary-text-color: #ffffff;
+  --logo-main: #000000;
+  --bg-footer: #2f303a;
+  --secendary-footer-color: rgba(255, 255, 255, 0.6);
+  --svg-color: #afb1b8;
+  --bg-what-we-do-tittle: rgba(47, 48, 58, 0.8);
+  --bg-button: #f5f4fa;
+  --bg-action-color: rgba(33, 150, 243, 0.9);
+}
+body {
+  color: var(--main-text-color);
+  font-family: var(--main-font);
+  font-style: normal;
+  letter-spacing: 0.03em;
+}
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+h1,
+h2,
+h3,
+h4 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+/* ---- Styles for most links ----- */
+.link {
+  text-decoration: none;
+}
+/* --- Styles for most list --- */
+.list {
+  list-style: none;
+}
+/* --- Styles for most tittle --- */
+.title {
+  color: var(--main-title-color);
+  letter-spacing: 0.03em;
+}
+.social-page {
+  display: flex;
+}
+.social-page > li:not(:last-child) {
+  margin-right: 10px;
+}
+.conteiner {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.section-title {
+  margin-bottom: 50px;
+  color: var(--main-title-color);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.16em;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+/* -------------  HEADER STYLE END  --------*/
+/* ---- LOGO ----- */
+.header > .conteiner {
+  display: flex;
+}
+
+.logo {
+  color: var(--logo-main);
+  font-family: var(--logo-font);
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.2em;
+}
+
+.footer .logo {
+  color: var(--secendary-text-color);
+}
+
+.logo > span {
+  color: var(--main-action-color);
+}
+
+/* ---- Navigation menu ----*/
+.main-navigation {
+  display: flex;
+  align-items: center;
+}
+.main-menu {
+  display: flex;
+  margin-left: 85px;
+}
+
+.main-menu .link {
+  display: block;
+  color: var(--main-title-color);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.33em;
+  letter-spacing: 0.02em;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+.main-menu-item:not(:last-child) {
+  margin-right: 50px;
+}
+.contact-menu {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+.contact-menu .link {
+  display: block;
+  color: var(--main-text-color);
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.33em;
+  letter-spacing: 0.02em;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+.contact-menu li:not(:last-child) {
+  margin-right: 50px;
+}
+
+.main-menu .link:focus,
+.main-menu .link:hover,
+.contact-menu .link:hover {
+  color: var(--main-action-color);
+}
+
+.link.state-active {
+  /* status active page*/
+  color: var(--main-action-color);
+}
+
+/* ----SECTION HERO-----*/
+.hero {
+  text-align: center;
+  letter-spacing: 0.06em;
+}
+.hero-section {
+  padding-bottom: 200px;
+  padding-top: 200px;
+  /* Добавлен временно пока нет фоновой картинки в секции*/
+  background-color: var(--bg-button);
+}
+.hero.title {
+  margin-bottom: 30px;
+  color: var(--secendary-text-color);
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.36em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.hero.button {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 32px;
+  padding-right: 32px;
+  border-radius: 4px;
+  border-style: none;
+  display: block;
+  margin: auto;
+  background-color: var(--main-action-color);
+  color: var(--secendary-text-color);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87em;
+}
+/* ---- SECTIOND "Наши Принципы" ---- */
+.principles-section {
+  padding-top: 95px;
+  padding-bottom: 95px;
+}
+.our-principles {
+  display: flex;
+}
+.our-principles .title {
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14em;
+  text-transform: uppercase;
+}
+.our-principles > li:not(:last-child) {
+  margin-right: 30px;
+}
+.principles-img-conteiner {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 270px;
+  height: 120px;
+  margin-bottom: 30px;
+  background-color: var(--bg-button);
+}
+.our-principles img {
+  margin: auto;
+  /* margin-bottom выровняется до 55 когда отрисуется SVG*/
+}
+
+.our-principles .description {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.17em;
+}
+
+/* ----SECTION WHAT WE DO----*/
+.what-we-do {
+  padding-bottom: 95px;
+  letter-spacing: 0.03em;
+}
+.what-we-do-list {
+  display: flex;
+}
+.what-we-do-list > li:not(:last-child) {
+  margin-right: 30px;
+}
+/* стили для заголовка описаны в section-title в шапке файле*/
+.what-we-do .description {
+  background-color: var(--bg-what-we-do-tittle);
+  color: var(--secendary-text-color);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14em;
+  text-align: center;
+  text-transform: uppercase;
+}
+/* ---- SECTION OUR TEAM ----*/
+.our-team {
+  padding-bottom: 95px;
+  padding-top: 95px;
+  background-color: var(--bg-button);
+  letter-spacing: 0.03em;
+}
+
+.our-team-list {
+  display: flex;
+}
+.our-team-list > li:not(:last-child) {
+  margin-right: 30px;
+}
+.our-team-list > li {
+  background-color: var(--secendary-text-color);
+}
+.our-team-list img {
+  display: block;
+  margin-bottom: 30px;
+}
+.our-team-list .title {
+  margin-bottom: 10px;
+}
+.our-team-list .description {
+  margin-bottom: 16px;
+}
+.our-team-list .social-page {
+  margin-bottom: 25px;
+}
+.our-team .title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.18em;
+  text-align: center;
+}
+.our-team .description {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.18em;
+  text-align: center;
+}
+
+.our-team .social-page {
+  color: var(--svg-color);
+}
+.our-team .social-page:hover,
+.our-team .social-page:focus {
+  background-color: var(--main-action-color);
+}
+
+/* ---- SECTION COMPANY ----*/
+.company {
+  padding-top: 95px;
+  padding-bottom: 95px;
+}
+.company-list {
+  display: flex;
+}
+.company-list > li:not(:last-child) {
+  margin-right: 30px;
+}
+.company-list a {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 170px;
+  height: 90px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 4px;
+  border-color: var(--svg-color);
+}
+/*  ---- FOOTER  -----*/
+.footer {
+  padding-bottom: 60px;
+  padding-top: 60px;
+  background-color: var(--bg-footer);
+  letter-spacing: 0.03em;
+}
+.footer .conteiner {
+  display: flex;
+}
+.contact .link {
+  color: var(--secendary-footer-color);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.71em;
+}
+.footer .maps {
+  color: var(--secendary-text-color);
+}
+.footer p {
+  color: var(--secendary-text-color);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.footer-left-block {
+  margin-right: 70px;
+}
+.footer .logo {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.contact li {
+  margin-bottom: 10px;
+}
+
+/*============================================================*/
+
+/* -------PORTFOLIO PAGE--------*/
+.our-product {
+  padding-bottom: 95px;
+  padding-top: 95px;
+}
+/*---Filter-button---*/
+.filter-menu {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.filter-menu-item:not(:last-child) {
+  margin-right: 8px;
+}
+.filter-menu-button {
+  border-radius: 4px;
+  border-style: none;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 22px;
+  padding-right: 22px;
+  background-color: var(--bg-button);
+  color: var(--main-title-color);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.33em;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+.filter-menu-button.state-active,
+.filter-menu-button:hover,
+.filter-menu-button:focus {
+  background-color: var(--main-action-color);
+  color: var(--secendary-text-color);
+}
+
+/*---- PRODUCT SECTION -----*/
+
+.product-title {
+  margin-bottom: 4px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2em;
+  letter-spacing: 0.06em;
+}
+.product-type {
+  color: var(--main-text-color);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.87em;
+}
+.product-description {
+  background-color: var(--bg-action-color);
+  color: var(--secendary-text-color);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.55em;
+  letter-spacing: 0.03em;
+  visibility: hidden;
+}
+.product-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+.product-content-item {
+  width: 370px;
+  height: 404px;
+}
+.product-content-item:not(:nth-child(3n)) {
+  margin-right: 30px;
+}
+.product-content-item:not(:nth-last-child(-n + 3)) {
+  margin-bottom: 30px;
+}
+.product-content-item img {
+  margin-bottom: 20px;
+}
