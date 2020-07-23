@@ -204,7 +204,7 @@ h4 {
   margin-bottom: 30px;
   background-color: var(--bg-button);
 }
-.our-principles img {
+.our-principles svg {
   margin: auto;
   /* margin-bottom выровняется до 55 когда отрисуется SVG*/
 }
@@ -279,11 +279,15 @@ h4 {
   text-align: center;
 }
 
-.our-team .social-page {
-  color: var(--svg-color);
+.our-team .social-page-icon {
+  display: block;
+  width: 44px;
+  height: 44px;
+  background-color: var(--svg-color);
+  border-radius: 22px;
 }
-.our-team .social-page:hover,
-.our-team .social-page:focus {
+.our-team .social-page-icon:hover,
+.our-team .social-page-icon:focus {
   background-color: var(--main-action-color);
 }
 
