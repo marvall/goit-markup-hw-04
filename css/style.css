@@ -31,6 +31,11 @@ h4 {
   margin-top: 0px;
   margin-bottom: 0px;
 }
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 /* ---- Styles for most links ----- */
 .link {
   text-decoration: none;
@@ -50,12 +55,16 @@ h4 {
 .social-page > li:not(:last-child) {
   margin-right: 10px;
 }
-.conteiner {
+.container {
   width: 1200px;
   padding-left: 15px;
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
+}
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
 }
 .section-title {
   margin-bottom: 50px;
@@ -68,7 +77,10 @@ h4 {
 }
 /* -------------  HEADER STYLE END  --------*/
 /* ---- LOGO ----- */
-.header > .conteiner {
+.header-portfolio {
+  border-bottom: 1px solid #ececec;
+}
+.header > .container {
   display: flex;
 }
 
@@ -133,21 +145,42 @@ h4 {
 
 .main-menu .link:focus,
 .main-menu .link:hover,
-.contact-menu .link:hover {
+.contact-menu .link:hover,
+.contact-menu .link:focus {
   color: var(--main-action-color);
+}
+.contact-menu .link svg {
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.contact-menu .link:hover svg,
+.contact-menu .link:focus svg {
+  fill: var(--main-action-color);
 }
 
 .link.state-active {
   /* status active page*/
   color: var(--main-action-color);
 }
-
+.main-menu-item.state-active::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--main-action-color);
+}
 /* ----SECTION HERO-----*/
 .hero {
   text-align: center;
   letter-spacing: 0.06em;
 }
 .hero-section {
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.8),
+      rgba(47, 48, 58, 0.8)
+    ),
+    url(../images/bg/hero-bg.jpg);
   padding-bottom: 200px;
   padding-top: 200px;
   /* Добавлен временно пока нет фоновой картинки в секции*/
@@ -177,10 +210,14 @@ h4 {
   font-size: 16px;
   line-height: 1.87em;
 }
+.hero.button:hover,
+.hero.button:focus {
+  background: #188ce8;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
 /* ---- SECTIOND "Наши Принципы" ---- */
 .principles-section {
-  padding-top: 95px;
-  padding-bottom: 95px;
+  padding-bottom: 0px;
 }
 .our-principles {
   display: flex;
@@ -195,7 +232,7 @@ h4 {
 .our-principles > li:not(:last-child) {
   margin-right: 30px;
 }
-.principles-img-conteiner {
+.principles-img-container {
   display: flex;
   justify-content: center;
   align-content: center;
@@ -204,20 +241,19 @@ h4 {
   margin-bottom: 30px;
   background-color: var(--bg-button);
 }
-.our-principles svg {
-  margin: auto;
-  /* margin-bottom выровняется до 55 когда отрисуется SVG*/
-}
 
 .our-principles .description {
   font-weight: 400;
   font-size: 14px;
   line-height: 1.17em;
+  margin: 0px;
 }
 
+.our-principles svg {
+  margin: auto;
+}
 /* ----SECTION WHAT WE DO----*/
 .what-we-do {
-  padding-bottom: 95px;
   letter-spacing: 0.03em;
 }
 .what-we-do-list {
@@ -235,11 +271,10 @@ h4 {
   line-height: 1.14em;
   text-align: center;
   text-transform: uppercase;
+  margin: 0;
 }
 /* ---- SECTION OUR TEAM ----*/
 .our-team {
-  padding-bottom: 95px;
-  padding-top: 95px;
   background-color: var(--bg-button);
   letter-spacing: 0.03em;
 }
@@ -252,6 +287,9 @@ h4 {
 }
 .our-team-list > li {
   background-color: var(--secendary-text-color);
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 0px 0px 4px 4px;
 }
 .our-team-list img {
   display: block;
@@ -261,10 +299,13 @@ h4 {
   margin-bottom: 10px;
 }
 .our-team-list .description {
+  margin: 0;
   margin-bottom: 16px;
 }
 .our-team-list .social-page {
   margin-bottom: 25px;
+  padding-left: 32px;
+  padding-right: 32px;
 }
 .our-team .title {
   font-weight: 500;
@@ -279,39 +320,55 @@ h4 {
   text-align: center;
 }
 
-.our-team .social-page-icon {
-  display: block;
+.social-page-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 44px;
   height: 44px;
-  background-color: var(--svg-color);
-  border-radius: 22px;
+  border-radius: 50%;
 }
-.our-team .social-page-icon:hover,
-.our-team .social-page-icon:focus {
+.social-page-icon:hover,
+.social-page-icon:focus {
   background-color: var(--main-action-color);
 }
-
-/* ---- SECTION COMPANY ----*/
-.company {
-  padding-top: 95px;
-  padding-bottom: 95px;
+.social-link-svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--svg-color);
 }
+.social-page-icon:hover .social-link-svg,
+.social-page-icon:focus .social-link-svg {
+  fill: var(--secendary-text-color);
+}
+/* ---- SECTION COMPANY ----*/
 .company-list {
   display: flex;
 }
 .company-list > li:not(:last-child) {
   margin-right: 30px;
 }
-.company-list a {
+.company-list-link {
   display: flex;
   justify-content: center;
-  align-content: center;
+  align-items: center;
   width: 170px;
   height: 90px;
   border-style: solid;
   border-width: 1px;
   border-radius: 4px;
   border-color: var(--svg-color);
+}
+.company-list svg {
+  fill: var(--svg-color);
+}
+.company-list-link:hover,
+.company-list-link:focus {
+  border-color: var(--main-action-color);
+}
+.company-list-link:hover svg,
+.company-list-link:focus svg {
+  fill: var(--main-action-color);
 }
 /*  ---- FOOTER  -----*/
 .footer {
@@ -320,7 +377,7 @@ h4 {
   background-color: var(--bg-footer);
   letter-spacing: 0.03em;
 }
-.footer .conteiner {
+.footer .container {
   display: flex;
 }
 .contact .link {
@@ -339,6 +396,8 @@ h4 {
   font-size: 14px;
   line-height: 1.14em;
   text-transform: uppercase;
+  margin: 0;
+  margin-top: 12px;
   margin-bottom: 20px;
 }
 .footer-left-block {
@@ -352,14 +411,20 @@ h4 {
 .contact li {
   margin-bottom: 10px;
 }
-
+.footer .social-page-icon {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.footer .social-page-icon:hover,
+.footer .social-page-icon:focus {
+  background-color: var(--main-action-color);
+}
+.footer .social-link-svg {
+  fill: var(--secendary-text-color);
+}
 /*============================================================*/
 
 /* -------PORTFOLIO PAGE--------*/
-.our-product {
-  padding-bottom: 95px;
-  padding-top: 95px;
-}
+
 /*---Filter-button---*/
 .filter-menu {
   display: flex;
@@ -401,12 +466,14 @@ h4 {
   letter-spacing: 0.06em;
 }
 .product-type {
+  margin: 0;
   color: var(--main-text-color);
   font-weight: 400;
   font-size: 16px;
   line-height: 1.87em;
 }
 .product-description {
+  margin: 0;
   background-color: var(--bg-action-color);
   color: var(--secendary-text-color);
   font-weight: 400;
@@ -419,9 +486,12 @@ h4 {
   display: flex;
   flex-wrap: wrap;
 }
+.product-description-container {
+  padding-right: 24px;
+  padding-left: 24px;
+}
 .product-content-item {
   width: 370px;
-  height: 404px;
 }
 .product-content-item:not(:nth-child(3n)) {
   margin-right: 30px;
@@ -431,4 +501,10 @@ h4 {
 }
 .product-content-item img {
   margin-bottom: 20px;
+}
+.product-content-item:hover,
+.product-content-item:focus {
+  border: 1px solid #eeeeee;
+  box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    0px 1px 1px rgba(0, 0, 0, 0.12);
 }
